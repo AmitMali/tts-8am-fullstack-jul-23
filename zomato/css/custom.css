@@ -1,0 +1,8 @@
+.header {
+  height: 70vh;
+  background-image: url("../assets/images/header-bg.avif");
+  background-size: cover;
+}
+.header-logo {
+  height: 60px;
+}
