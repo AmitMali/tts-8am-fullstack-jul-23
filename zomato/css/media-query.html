@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .row {
+        display: flex;
+        background-color: burlywood;
+        padding: 15px;
+      }
+      .col {
+        padding: 20px;
+        background-color: aqua;
+        margin: 15px;
+        flex-direction: row;
+        width: 25%;
+      }
+
+      @media screen and (min-width: 600px) {
+        .col {
+          width: 100%;
+          background-color: azure;
+        }
+      }
+      @media screen and (min-width: 900px) {
+        .col {
+          background-color: rebeccapurple;
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        .col {
+          background-color: yellow;
+        }
+      }
+    </style>
+
+    <div class="row">
+      <div class="col"></div>
+
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading" onclick="changeColor()">Welcome to<u> Javascript</u></h1>
+
+    <h1 onclick="changeColor()">another heading</h1>
+    <h1>another heading 2</h1>
+    <script>
+      function changeColor() {
+        // document.getElementById("haeding")
+        var headings = document.getElementsByTagName("h1");
+        console.log(headings);
+        for (var i = 0; i < headings.length; i++) {
+          headings[i].style.color = "red";
+          headings[i].style.fontSize = "16px";
+          headings[i].innerHTML = "updated content via javascript";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listner</title>
+  </head>
+  <body>
+    <style>
+      .box {
+        padding: 13px;
+        font-size: 2em;
+        background-color: bisque;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+    <div class="box" id="box1">Lorem Ipsum</div>
+    <input type="text" name="message" />
+    <p id="showmsg"></p>
+    <script>
+      var box1 = document.getElementById("box1");
+      function changeColor(color) {
+        // function will do operations on element
+        box1.style.backgroundColor = color;
+      }
+      box1.addEventListener("click", function () {
+        changeColor("red");
+      }); //we are binding an even to the element
+
+      var msg = document.getElementsByName("message");
+      function showMsg() {
+        console.log("keydown");
+        document.getElementById("showmsg").innerHTML = msg[0].value;
+      }
+      msg[0].addEventListener("keyup", function () {
+        //function is anonymous function calling our function
+        showMsg();
+      });
+    </script>
+  </body>
+</html>
