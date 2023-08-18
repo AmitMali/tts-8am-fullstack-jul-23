@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //this is self invoking function
+      //   (function () {
+      //     document.write("hello i invoked , ");
+      //   })();
+      let g = "global ";
+      function a() {
+        let a = " inside a ";
+        document.write(g, a);
+        function b() {
+          let b = "inside b ";
+          document.write(g, a, b);
+          function c() {
+            let c = "inside c ";
+            document.write(g, a, b, c);
+          }
+          c();
+        }
+        b();
+      }
+      a();
+    </script>
+  </body>
+</html>
