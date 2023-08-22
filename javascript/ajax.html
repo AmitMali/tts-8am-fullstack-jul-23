@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #data {
+        border: 2px solid gray;
+      }
+      #data tr:nth-child(even) {
+        background-color: antiquewhite;
+      }
+      #data tr:nth-child(odd) {
+        background-color: aliceblue;
+      }
+    </style>
+    <button id="loaddata">load file content</button>
+    <table id="data"></table>
+    <script>
+      let btn = document.getElementById("loaddata");
+      btn.addEventListener("click", () => {
+        let xmlh = new XMLHttpRequest();
+        xmlh.onload = () => {
+          let todos = JSON.parse(xmlh.responseText);
+          let rows = "";
+          todos.forEach((todo) => {
+            rows += `<tr>
+                <td>${todo.id}</td>
+                <td>${todo.userId}</td>
+                <td>${todo.title}</td>
+                <td>${todo.completed}</td>
+                </tr>`;
+          });
+
+          document.getElementById("data").innerHTML = rows;
+        };
+        xmlh.open("GET", "https://jsonplaceholder.typicode.com/todos");
+        xmlh.send();
+      });
+    </script>
+  </body>
+</html>
